@@ -18,7 +18,8 @@ def logout(session):
 
 # ensures that Umlaute are getting displayed correctly
 def umlaute_correcter(str):
-    return str.replace("\\u00f6", "oe").replace("\\u00e4", "ae").replace("\\u00df", "ss").replace("\\u00fc", "ue")
+    str = str.replace("\\u00f6", "oe").replace("\\u00e4", "ae").replace("\\u00df", "ss").replace("\\u00fc", "ue")
+    return str.replace("ö", "oe").replace("ä", "ae").replace("ß", "ss").replace("ü", "ue")
 
 def create_message(response, message):
     response_str = str(response.content).replace('b\'{"status":', '{"status":', 1).replace('"}]}\'', '"}]}', 1)
